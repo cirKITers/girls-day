@@ -4,9 +4,8 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
 
 from qiskit import QuantumCircuit, QuantumRegister
-from qiskit import Aer
 from qiskit.circuit.random import random_circuit
-from qiskit.providers.fake_provider import FakeManilaV2, FakeBoeblingen, FakeMelbourne
+from qiskit_ibm_runtime.fake_provider import FakeManilaV2, FakeBoeblingenV2 as FakeBoeblingen, FakeMelbourneV2 as FakeMelbourne
 from utils import (
     filling_zeros,
     create_mapping,

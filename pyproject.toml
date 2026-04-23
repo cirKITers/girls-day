@@ -23,11 +23,13 @@ requires-python = ">=3.10"
 readme = "README.md"
 dependencies = [
     "matplotlib >= 3.7",
-    "qiskit == 0.41.1",
+    "qiskit >= 1.0",
+    "qiskit-aer >= 0.13",
+    "qiskit-ibm-runtime >= 0.20",
     "ipykernel >= 6.22",
     "ipywidgets",
     "pylatexenc",
-    "pandas",
+    "pandas >= 2.2",
 ]
 
 [project.optional-dependencies]

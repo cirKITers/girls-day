@@ -4,9 +4,8 @@ from copy import copy
 from utils import load_image, reduce_rgb_values, print_mapping, create_rgb_qubits
 from ipywidgets import interact, interact_manual, interactive
 from qiskit import QuantumCircuit
-from qiskit import Aer
 from qiskit.circuit.random import random_circuit
-from qiskit.providers.fake_provider import FakeManilaV2, FakeBoeblingen, FakeMelbourne
+from qiskit_ibm_runtime.fake_provider import FakeManilaV2, FakeBoeblingenV2 as FakeBoeblingen, FakeMelbourneV2 as FakeMelbourne
 from utils import (
     filling_zeros,
     create_mapping,

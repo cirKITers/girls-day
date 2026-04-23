@@ -1,11 +1,9 @@
 import matplotlib.image as mpimg
 from matplotlib.pyplot import imshow
-from qiskit import QuantumCircuit, transpile, IBMQ, QuantumRegister
+from qiskit import QuantumCircuit, transpile, QuantumRegister
 from qiskit_aer import AerSimulator
 import numpy as np
 from copy import copy
-
-from ibmq_access import token, hub, group, project
 
 
 def load_image(path):
@@ -54,19 +52,6 @@ def filling_zeros(binary, n):
 def get_result(circuit, backend=None, shots=1024, prob=True):
     if backend is None:
         backend = AerSimulator()
-    elif type(backend) == str:
-        try:
-            provider = IBMQ.enable_account(
-                token=token,
-                hub=hub,
-                group=group,
-                project=project,
-            )
-        except (
-            IBMQ.IBMQAccountError
-        ):  # we will run into that when trying to connect to already enabled account
-            pass
-        backend = provider.get_backend(backend)
 
     job_sim = backend.run(
         transpile(circuit, backend, optimization_level=0), shots=shots
